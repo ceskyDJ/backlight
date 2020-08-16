@@ -1,6 +1,5 @@
 /**
- *  Simple program for controlling backlight of the official
- *  Raspberry Pi Touchscreen.
+ *  Simple program for controlling backlight of the notebook main screen
  *
  *  Make sure you execute following commands to be able to access config files as
  *  a regular user:
@@ -14,11 +13,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define POWER_FILE "/sys/class/backlight/rpi_backlight/bl_power"
+#define POWER_FILE "/sys/class/backlight/intel_backlight/bl_power"
 #define POWER_ON 0
 #define POWER_OFF 1
 
-#define BRIGHTNESS_FILE "/sys/class/backlight/rpi_backlight/brightness"
+#define BRIGHTNESS_FILE "/sys/class/backlight/intel_backlight/brightness"
 #define BRIGHTNESS_MAX 180
 #define BRIGHTNESS_MIN 30
 #define BRIGHTNESS_STEP 15
@@ -33,6 +32,7 @@ int usage(char *argv[]) {
            "\ton:\t turns the screen on\n"
            "\toff:\t turns the screen off\n\n"
            "2015, Jakub Hladik, www.github.com/jakeh12\n\n"
+           "2020, ceskyDJ, www.github.com/ceskyDJ\n\n"
            , argv[0]);
     
     return EXIT_FAILURE;
