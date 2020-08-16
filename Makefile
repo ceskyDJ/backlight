@@ -1,11 +1,13 @@
-all: rpi-backlight.c
-	gcc -g -Wall -o rpi-backlight rpi-backlight.c
+all: backlight.c
+	gcc -g -Wall -o backlight backlight.c
 
 install:
-	cp rpi-backlight /usr/local/bin
+	cp backlight /usr/local/bin
+	ln -S /usr/local/bin/backlight /usr/local/bin/bl
 
 clean:
-	$(RM) rpi-backlight
+	$(RM) backlight
 
 uninstall:
-	$(RM) /usr/local/bin/rpi-backlight
+	$(RM) /usr/local/bin/bl
+	$(RM) /usr/local/bin/backlight
