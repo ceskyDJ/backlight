@@ -20,11 +20,11 @@ Make sure you execute following commands to be able to access config files as a 
 	
 	backlight [option]
 	
-		up:		increases brightness by 10%
+		up:	increases brightness by 10%
 		down:	decreases brightness by 10%
 		max:	sets brightness to 100%
 		min:	sets brightness to 0%
-		on:		turns the screen on
+		on:	turns the screen on
 		off:	turns the screen off
 
 
