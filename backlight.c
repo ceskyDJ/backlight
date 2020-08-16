@@ -18,8 +18,8 @@
 #define POWER_OFF 1
 
 #define BRIGHTNESS_FILE "/sys/class/backlight/intel_backlight/brightness"
-#define BRIGHTNESS_MAX 180
-#define BRIGHTNESS_MIN 30
+#define MAX_BRIGHTNESS_FILE "/sys/class/backlight/intel_backlight/max_brightness"
+#define BRIGHTNESS_MIN 0
 #define BRIGHTNESS_STEP 15
 
 int usage(char *argv[]) {
@@ -32,7 +32,7 @@ int usage(char *argv[]) {
            "\t- on:\t turns the screen on\n"
            "\t- off:\t turns the screen off\n\n"
            "2015, Jakub Hladik, www.github.com/jakeh12\n"
-           "2020, ceskyDJ, www.github.com/ceskyDJ\n"
+           "2020, ceskyDJ, www.github.com/ceskyDJ"
            , argv[0]);
     
     return EXIT_FAILURE;
@@ -49,8 +49,21 @@ int get_brightness() {
     return brightness_value;
 }
 
+int get_max_brightness() {
+    FILE *brightness_file;
+    int brightness_value;
+    
+    brightness_file = fopen(MAX_BRIGHTNESS_FILE, "r");
+    fscanf(brightness_file, "%d", &brightness_value);
+    fclose(brightness_file);
+    
+    return brightness_value;
+}
+
 void set_brightness(int brightness_value) {
-    if (brightness_value > BRIGHTNESS_MAX) brightness_value = BRIGHTNESS_MAX;
+    int max_brightness = get_max_brightness();
+    
+    if (brightness_value > max_brightness) brightness_value = max_brightness;
     if (brightness_value < BRIGHTNESS_MIN) brightness_value = BRIGHTNESS_MIN;
     
     FILE *brightness_file;
@@ -115,7 +128,7 @@ int main(int argc, char *argv[]) {
         brightness_value -= BRIGHTNESS_STEP;
     }
     else if (strcmp(argv[1], "max") == 0) {
-        brightness_value = BRIGHTNESS_MAX;
+        brightness_value = get_max_brightness();
     }
     else if (strcmp(argv[1], "min") == 0) {
         brightness_value = BRIGHTNESS_MIN;
