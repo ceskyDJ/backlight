@@ -32,7 +32,7 @@ int usage(char *argv[]) {
            "\t- on:\t turns the screen on\n"
            "\t- off:\t turns the screen off\n\n"
            "2015, Jakub Hladik, www.github.com/jakeh12\n"
-           "2020, ceskyDJ, www.github.com/ceskyDJ\n\n"
+           "2020, ceskyDJ, www.github.com/ceskyDJ\n"
            , argv[0]);
     
     return EXIT_FAILURE;
