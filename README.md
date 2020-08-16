@@ -1,10 +1,6 @@
-# rpi-backlight
+# backlight
 
-Simple program for controlling backlight of the official Raspberry Pi Touchscreen.
-
-COMPLETE FUNCTIONALITY ON DISPLAY BOARDS V2.0 AND V1.1 ONLY!
-
-DISPLAY BOARD V1.0 ONLY "on" AND "off" WORKING (need to verify)
+Simple program for controlling backlight of notebook main screen
 
 
 Make sure you execute following commands to be able to access config files as a regular user:
@@ -15,14 +11,14 @@ Make sure you execute following commands to be able to access config files as a 
 
 ## Installation
 	
-	git clone https://github.com/jakeh12/rpi-backlight.git
-	cd rpi-backlight
+	git clone https://github.com/ceskyDJ/backlight.git
+	cd backlight
 	make
 	sudo make install
 
 ## Usage
 	
-	rpi-backlight [option]
+	backlight [option]
 	
 		up:		increases brightness by 10%
 		down:	decreases brightness by 10%
