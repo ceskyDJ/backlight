@@ -23,15 +23,15 @@
 #define BRIGHTNESS_STEP 15
 
 int usage(char *argv[]) {
-    printf("usage: %s up | down | max | min | on | off\n\n"
-           "options:\n"
-           "\tup:\t increases brightness by 10%%\n"
-           "\tdown:\t decreases brightness by 10%%\n"
-           "\tmax:\t sets brightness to 100%%\n"
-           "\tmin:\t sets brightness to 0%%\n"
-           "\ton:\t turns the screen on\n"
-           "\toff:\t turns the screen off\n\n"
-           "2015, Jakub Hladik, www.github.com/jakeh12\n\n"
+    printf("Usage: %s <option>\n\n"
+           "Options:\n"
+           "\t- up:\t increases brightness by 10%%\n"
+           "\t- down:\t decreases brightness by 10%%\n"
+           "\t- max:\t sets brightness to 100%%\n"
+           "\t- min:\t sets brightness to 0%%\n"
+           "\t- on:\t turns the screen on\n"
+           "\t- off:\t turns the screen off\n\n"
+           "2015, Jakub Hladik, www.github.com/jakeh12\n"
            "2020, ceskyDJ, www.github.com/ceskyDJ\n\n"
            , argv[0]);
     
