@@ -3,7 +3,7 @@ all: backlight.c
 
 install:
 	cp backlight /usr/local/bin
-	ln -S /usr/local/bin/backlight /usr/local/bin/bl
+	ln -s /usr/local/bin/backlight /usr/local/bin/bl
 
 clean:
 	$(RM) backlight
